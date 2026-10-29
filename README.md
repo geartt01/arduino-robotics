@@ -1,5 +1,7 @@
 # Arduino & ESP32 Robotics
 
+[![Compile sketches](https://github.com/geartt01/arduino-robotics/actions/workflows/compile.yml/badge.svg)](https://github.com/geartt01/arduino-robotics/actions/workflows/compile.yml)
+
 Hardware projects I built and programmed in C++ with the Arduino IDE.
 
 | Project | Board | What it does |
@@ -32,6 +34,8 @@ test to the final version:
 | v3 – calibrated | Moved the sensors to A1–A5 and gave each one its own measured range |
 | v4 – per-finger calibration | Calibration arrays, averaged readings, reversed direction to match the hand |
 | **final** | Noise filtering and angle smoothing, so the fingers hold still when your hand does |
+
+On every push, GitHub Actions compiles the final sketch and all four iterations for the Arduino Uno.
 
 ## ESP32 weather station
 
