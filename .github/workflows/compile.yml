@@ -1,0 +1,22 @@
+name: Compile sketches
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  robotic-hand:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # Compiles the final sketch and every version in iterations/ for the Arduino Uno.
+      # The ESP32 weather station needs the ACEBOTT kit libraries, which aren't in the
+      # Arduino Library Manager, so it isn't built here.
+      - uses: arduino/compile-sketches@v1
+        with:
+          fqbn: arduino:avr:uno
+          libraries: |
+            - name: Servo
+          sketch-paths: |
+            - robotic-hand
